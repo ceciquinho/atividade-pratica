@@ -1,0 +1,79 @@
+/* Variáveis */
+$primary-color: #6a11cb;
+$secondary-color: #2575fc;
+$text-color: #333;
+$background-color: #f9f9f9;
+$white: #fff;
+
+/* Mixins */
+@mixin gradient($color1, $color2) {
+  background: linear-gradient(45deg, $color1, $color2);
+}
+
+/* Estilos globais */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: $text-color;
+  background: $background-color;
+}
+
+header {
+  @include gradient($primary-color, $secondary-color);
+  color: $white;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+
+  nav {
+    margin-top: 15px;
+
+    .button {
+      text-decoration: none;
+      padding: 10px 20px;
+      color: $white;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: $white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $primary-color;
+  }
+
+  ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+}
+
+footer {
+  @include gradient($secondary-color, $primary-color);
+  color: $white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
